@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/todoName"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="center" />
+
+        <TextView android:id="@+id/todoExpiryDate"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/todoName"
+            android:layout_toEndOf="@+id/todoName"
+            android:gravity="center"
+            android:textAlignment="center" />
+
+        <Button android:id="@+id/finishButton"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/todoExpiryDate"
+            android:layout_toRightOf="@+id/todoExpiryDate"
+            android:background="@color/colorMain"
+            android:text="@string/finish"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
