@@ -24,6 +24,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -157,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
             LocalDate localDate = LocalDate.parse(date);
             LocalTime localTime = LocalTime.parse(time);
 
-            LocalDateTime givenLocalDateTime = LocalDateTime.of(localDate, localTime);
-            return givenLocalDateTime.isAfter(LocalDateTime.now());
+            ZonedDateTime givenLocalDateTime = ZonedDateTime.of(localDate, localTime, ZoneId.systemDefault());
+            return givenLocalDateTime.toLocalTime().isAfter(ZonedDateTime.now(ZoneId.systemDefault()).toLocalTime());
         }
     }
 

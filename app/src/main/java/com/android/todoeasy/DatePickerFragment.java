@@ -33,7 +33,6 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         return new DatePickerDialog(context, this, year, month, day);
     }
 
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         // todo try validating the given here as well
