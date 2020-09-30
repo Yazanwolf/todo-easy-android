@@ -8,6 +8,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TodoListAdapter extends BaseExpandableListAdapter {
@@ -26,15 +28,32 @@ public class TodoListAdapter extends BaseExpandableListAdapter {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.todo_list_item_group, null);
         }
+        initGroupItems(groupPosition, convertView);
+        return convertView;
+    }
+
+    private void initGroupItems(int groupPosition, View convertView) {
         Todo todo = todos.get(groupPosition);
 
         TextView todoName = convertView.findViewById(R.id.todoName);
         todoName.setText(todo.getName());
+
         TextView todoExpiryDate = convertView.findViewById(R.id.todoExpiryDate);
-        todoExpiryDate.setText(todo.getExpiryDate().toString());
+        todoExpiryDate.setText(getDateOnly(todo.getExpiryDate()));
+
+        TextView todoExpiryTime = convertView.findViewById(R.id.todoExpiryTime);
+        todoExpiryTime.setText(getTimeOnly(todo.getExpiryDate()));
+
         Button finishButton = convertView.findViewById(R.id.finishButton);
-        finishButton.setVisibility(todo.isFinished() ? View.VISIBLE : View.GONE);
-        return convertView;
+        finishButton.setVisibility(todo.isFinished() ? View.GONE : View.VISIBLE);
+    }
+
+    private String getDateOnly(LocalDateTime expiryDate) {
+        return expiryDate.format(DateTimeFormatter.ofPattern("dd-mm-yyyy"));
+    }
+
+    private String getTimeOnly(LocalDateTime expiryDate) {
+        return expiryDate.format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 
     @Override
@@ -87,6 +106,6 @@ public class TodoListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
 }

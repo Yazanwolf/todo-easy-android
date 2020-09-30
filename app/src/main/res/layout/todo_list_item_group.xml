@@ -1,38 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/todoName"
-            android:layout_width="150dp"
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textAlignment="center" />
+            android:textAppearance="@style/QText_default"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" />
 
-        <TextView android:id="@+id/todoExpiryDate"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/todoName"
-            android:layout_toEndOf="@+id/todoName"
-            android:gravity="center"
-            android:textAlignment="center" />
+            android:layout_weight="0.3"
+            android:weightSum="10"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/todoExpiryDate"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textAppearance="@style/QText_default"
+                android:textAlignment="center"
+                tools:ignore="NestedWeights" />
+
+            <TextView android:id="@+id/todoExpiryTime"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textAppearance="@style/QText_default"
+                android:gravity="center"
+                android:textAlignment="center" />
+
+        </LinearLayout>
 
         <Button android:id="@+id/finishButton"
-            android:layout_width="150dp"
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/todoExpiryDate"
-            android:layout_toRightOf="@+id/todoExpiryDate"
-            android:background="@color/colorMain"
+            android:background="@drawable/custom_button"
             android:text="@string/finish"
-            android:gravity="center_horizontal"
-            android:textAlignment="center" />
+            android:textAppearance="@style/QText_default"
+            android:textAlignment="center"
+            android:gravity="center" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
