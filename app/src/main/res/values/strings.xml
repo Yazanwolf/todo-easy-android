@@ -25,4 +25,7 @@
     <string name="todo_description_placeholder">You can write a brief description about your todo…</string>
     <string name="expiry_date_hint">Expiry date: dd.mm.YYYY</string>
     <string name="create">Create</string>
+    <string name="todo_task_empty">Todo must have a task</string>
+    <string name="expiry_time_hint">Expiry time: HH:mm</string>
+    <string name="given_time_date_not_valid">Please provide valid time and date!</string>
 </resources>

@@ -12,8 +12,8 @@ import androidx.fragment.app.DialogFragment;
 import java.time.LocalDate;
 import java.util.Calendar;
 
-import static com.android.todoeasy.MainActivity.DATE_HAS_BEEN_SET;
-import static com.android.todoeasy.MainActivity.GIVEN_DATE;
+import static com.android.todoeasy.CreateTodoActivity.DATE_HAS_BEEN_SET;
+import static com.android.todoeasy.CreateTodoActivity.GIVEN_DATE;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 

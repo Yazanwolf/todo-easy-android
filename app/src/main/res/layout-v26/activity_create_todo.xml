@@ -99,6 +99,7 @@
                 android:textSize="15sp"
                 android:autofillHints=""
                 android:inputType="date"
+                android:autoSizeTextType="uniform"
                 android:importantForAutofill="yes"
                 android:textAppearance="@style/QText_default"
                 tools:ignore="NestedWeights" />

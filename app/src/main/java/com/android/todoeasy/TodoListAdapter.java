@@ -8,8 +8,6 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TodoListAdapter extends BaseExpandableListAdapter {
@@ -39,21 +37,13 @@ public class TodoListAdapter extends BaseExpandableListAdapter {
         todoName.setText(todo.getName());
 
         TextView todoExpiryDate = convertView.findViewById(R.id.todoExpiryDate);
-        todoExpiryDate.setText(getDateOnly(todo.getExpiryDate()));
+        todoExpiryDate.setText(todo.getExpiryDate());
 
         TextView todoExpiryTime = convertView.findViewById(R.id.todoExpiryTime);
-        todoExpiryTime.setText(getTimeOnly(todo.getExpiryDate()));
+        todoExpiryTime.setText(todo.getExpiryTime());
 
         Button finishButton = convertView.findViewById(R.id.finishButton);
         finishButton.setVisibility(todo.isFinished() ? View.GONE : View.VISIBLE);
-    }
-
-    private String getDateOnly(LocalDateTime expiryDate) {
-        return expiryDate.format(DateTimeFormatter.ofPattern("dd-mm-yyyy"));
-    }
-
-    private String getTimeOnly(LocalDateTime expiryDate) {
-        return expiryDate.format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 
     @Override

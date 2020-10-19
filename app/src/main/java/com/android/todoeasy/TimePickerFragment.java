@@ -13,8 +13,8 @@ import androidx.fragment.app.DialogFragment;
 import java.time.LocalTime;
 import java.util.Calendar;
 
-import static com.android.todoeasy.MainActivity.GIVEN_TIME;
-import static com.android.todoeasy.MainActivity.TIME_HAS_BEEN_SET;
+import static com.android.todoeasy.CreateTodoActivity.GIVEN_TIME;
+import static com.android.todoeasy.CreateTodoActivity.TIME_HAS_BEEN_SET;
 
 public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
@@ -42,4 +42,5 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         intent.putExtra(GIVEN_TIME, givenLocalDateAsString);
         context.sendBroadcast(intent);
     }
+
 }

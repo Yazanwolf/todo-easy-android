@@ -91,7 +91,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <EditText android:id="@+id/calendarEditText"
+            <EditText android:id="@+id/dateEditText"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
@@ -103,7 +103,7 @@
                 android:textAppearance="@style/QText_default"
                 tools:ignore="NestedWeights" />
 
-            <ImageButton android:id="@+id/calendarButton"
+            <ImageButton android:id="@+id/dateButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -129,7 +129,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
-                android:hint="@string/expiry_date_hint"
+                android:hint="@string/expiry_time_hint"
                 android:textSize="15sp"
                 android:autofillHints=""
                 android:inputType="time"
@@ -152,14 +152,10 @@
             android:layout_weight="0.2"
             android:orientation="horizontal">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
-
             <Button android:id="@+id/createTodoButton"
-                android:layout_width="175dp"
+                android:layout_width="0dp"
                 android:layout_height="55dp"
+                android:layout_weight="0.3"
                 android:layout_gravity="bottom"
                 android:text="@string/create"
                 android:textSize="20sp"
@@ -169,7 +165,17 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.4"/>
+
+            <Button android:id="@+id/cancelTodoButton"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="bottom"
+                android:text="@string/cancel"
+                android:textSize="20sp"
+                style="@style/QText_titles"
+                android:background="@drawable/button_disabled"/>
 
         </LinearLayout>
 
