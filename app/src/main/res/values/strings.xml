@@ -15,9 +15,17 @@
     <string name="title_deadline">Deadline</string>
     <string name="no_tasks">No tasks available</string>
     <string name="setTime">Set time</string>
-    <string name="todo_task">Todo task</string>
+    <string name="todo_task_title">Todo task</string>
+    <string name="todo_task_placeholder">What are you planning to accomplish?</string>
     <string name="enter_todo_name">Choose a name or a task for your todo</string>
     <string name="ok">ok</string>
     <string name="cancel">cancel</string>
     <string name="invalid_date">Well time travel is unfortunately not yet an option</string>
+    <string name="todo_description_title">Discription</string>
+    <string name="todo_description_placeholder">You can write a brief description about your todo…</string>
+    <string name="expiry_date_hint">Expiry date: dd.mm.YYYY</string>
+    <string name="create">Create</string>
+    <string name="todo_task_empty">Todo must have a task</string>
+    <string name="expiry_time_hint">Expiry time: HH:mm</string>
+    <string name="given_time_date_not_valid">Please provide valid time and date!</string>
 </resources>
